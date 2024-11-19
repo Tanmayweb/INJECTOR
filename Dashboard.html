@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('bg.gif'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            color: #00ff00; /* Neon green color for text */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind everything */
+        }
+
+        .dashboard-container {
+            background-color: rgba(0, 0, 0, 0.8); /* Black with opacity for background */
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+            border: 2px solid #00ff00;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            border: 2px solid #00ff00;
+        }
+
+        .countdown {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
+        .info-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #00ff00;
+            text-align: left;
+            color: #00ff00;
+        }
+
+        .info-box h4 {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .info-box p {
+            display: inline-block;
+            margin: 0;
+        }
+
+        .open-game-button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .open-game-button:hover {
+            background-color: #00cc00;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .dashboard-container {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="dashboard-container">
+        <div class="logo">
+            <img src="god.jpg" alt="Logo"> <!-- Replace with your logo -->
+            <h4>TANMAY MOD
+            
+            TANMAY DEVELOPER ❤️‍🩹</h4>
+        </div>
+        
+        <div class="countdown">
+            <h6>TIME LEFT: <span id="countdown">1 days 10 hours 56 minutes 6 seconds</span></h6>
+        </div>
+
+        <div class="info-box">
+            <h4>USERNAME:</h4>
+            <p>2DAYSKEY</p></p> <!-- Only display the user's key -->
+        </div>
+
+        <div class="info-box">
+            <h4>REGISTERED ON:</h4>
+            <p>2024-11-07 11:02:53</p>
+        </div>
+
+        <div class="info-box">
+            <h4>EXPIRY TIME:</h4>
+            <p>2024-11-10 11:02:53</p>
+        </div>
+
+        <div class="info-box">
+            <h4>GAME NAME:</h4>
+            <p>ALL GAME 🎯</p> <!-- Display the Game Name -->
+        </div>
+
+        <div class="info-box">
+            <h4>GAME VERSION:</h4>
+            <p>V4</p> <!-- Display the Game Version (V4) -->
+        </div>
+
+        <div class="info-box">
+            <h4>GAME PLAY MOD:</h4>
+            <p>SAFE (100% ACCURACY)</p>
+        </div>
+
+        <h3>SERVER IS CONNECTED</h3>
+
+        <button class="open-game-button" onclick="redirectToGame()">OPEN GAME</button>
+    </div>
+
+    <script>
+        // Countdown timer
+        function startCountdown(duration) {
+            let timer = duration, days, hours, minutes, seconds;
+            setInterval(function () {
+                days = Math.floor(timer / (60 * 60 * 24));
+                hours = Math.floor((timer % (60 * 60 * 24)) / (60 * 60));
+                minutes = Math.floor((timer % (60 * 60)) / 60);
+                seconds = Math.floor(timer % 60);
+
+                document.getElementById('countdown').innerText = `${days} DAYS ${hours} HOURS ${minutes} MIN ${seconds} SEC`;
+
+                if (--timer < 0) {
+                    timer = 0;
+                }
+            }, 1000);
+        }
+
+        // Start the countdown with the calculated time left
+        startCountdown(90800);
+
+        // Initialize Particle.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Function to redirect to another page
+        function redirectToGame() {
+            window.location.href = "game_page.html"; // Replace with the actual URL or page you want to redirect to
+        }
+    </script>
+</body>
+</html>
